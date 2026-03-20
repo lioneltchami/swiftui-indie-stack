@@ -37,12 +37,12 @@ class LibraryCacheManager {
 
     // MARK: - Content Caching
 
-    func cacheContent(_ content: String, for entryId: String, version: Int) {
+    func cacheContent(_ content: String, for entryId: String, version: String) {
         let key = StorageKeys.libraryContent(id: entryId, version: version)
         defaults.set(content, forKey: key)
     }
 
-    func getCachedContent(for entryId: String, version: Int) -> String? {
+    func getCachedContent(for entryId: String, version: String) -> String? {
         let key = StorageKeys.libraryContent(id: entryId, version: version)
         return defaults.string(forKey: key)
     }

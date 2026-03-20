@@ -7,6 +7,8 @@
 
 import AppIntents
 import SwiftUI
+import TipKit
+import WidgetKit
 
 #if canImport(RevenueCat)
 import RevenueCat
@@ -48,6 +50,12 @@ struct MyApp: App {
                 // Deferred initialization - does not block first frame
                 guard !ProcessInfo.processInfo.isPreview else { return }
 
+                // Configure TipKit for contextual tips
+                try? Tips.configure([
+                    .displayFrequency(.weekly),
+                    .datastoreLocation(.applicationDefault)
+                ])
+
                 // Initialize TelemetryDeck (deferred from didFinishLaunchingWithOptions)
                 if AppConfiguration.useTelemetryDeck {
                     #if canImport(TelemetryDeck)
@@ -67,6 +75,7 @@ struct MyApp: App {
                     #if canImport(RevenueCat)
                     Purchases.logLevel = .info
                     Purchases.configure(withAPIKey: AppConfiguration.revenueCatAPIKey)
+                    PaywallManager.shared.configure()
 
                     // Set TelemetryDeck attributes in RevenueCat for integration
                     if AppConfiguration.useTelemetryDeck {

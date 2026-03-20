@@ -12,28 +12,22 @@ import SwiftUI
 
 struct ReduceMotionModifier: ViewModifier {
     @Environment(\.accessibilityReduceMotion) var reduceMotion
-    let animation: Animation
-    let reducedAnimation: Animation?
 
     func body(content: Content) -> some View {
-        content.animation(
-            reduceMotion ? (reducedAnimation ?? .none) : animation,
-            value: UUID() // triggers on any change
-        )
+        content
+            .transaction { transaction in
+                if reduceMotion {
+                    transaction.animation = nil
+                }
+            }
     }
 }
 
 extension View {
-    /// Apply animation that respects the reduce motion accessibility preference.
-    /// When reduce motion is enabled, falls back to `reducedTo` animation (defaults to `.none`).
-    func motionSafeAnimation(
-        _ animation: Animation,
-        reducedTo reduced: Animation? = nil
-    ) -> some View {
-        modifier(ReduceMotionModifier(
-            animation: animation,
-            reducedAnimation: reduced
-        ))
+    /// Suppress all animations on this view when the reduce motion accessibility
+    /// preference is enabled. No-op when reduce motion is off.
+    func reduceMotionSafe() -> some View {
+        modifier(ReduceMotionModifier())
     }
 }
 

@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct StreakMilestoneShareView: View {
     let milestone: Int
@@ -22,6 +23,9 @@ struct StreakMilestoneShareView: View {
                 .frame(width: 300, height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .shadow(color: .black.opacity(0.2), radius: 12, x: 0, y: 4)
+
+            // TipKit: Encourage sharing milestones
+            TipView(MilestoneShareTip())
 
             // Share button
             ShareLink(

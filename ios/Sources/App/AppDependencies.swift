@@ -19,7 +19,7 @@
 
 import SwiftUI
 
-extension EnvironmentValues {
-    /// Centralized error handler for presenting alerts and toasts.
-    @Entry var errorHandler: ErrorHandler = ErrorHandler()
-}
+// Note: ErrorHandler is injected via type-based .environment(errorHandler) in MyApp.swift
+// and consumed via @Environment(ErrorHandler.self). The @Entry macro creates a separate
+// keypath-based channel (@Environment(\.errorHandler)) which is not used.
+// Removed @Entry declaration to avoid confusion between the two injection channels.

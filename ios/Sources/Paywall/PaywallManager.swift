@@ -41,8 +41,14 @@ final class PaywallManager: PaywallServiceProtocol {
     private var log
 
     private init() {
+        // Don't access Purchases.shared here - it may not be configured yet.
+        // Customer info will be fetched when configure() is called after
+        // Purchases.configure(withAPIKey:) in MyApp.swift.
+    }
+
+    /// Call after Purchases.configure(withAPIKey:) to safely fetch initial customer info.
+    func configure() {
         #if canImport(RevenueCat)
-        // Listen to customer info updates
         Purchases.shared.getCustomerInfo { [weak self] customerInfo, error in
             self?.handleCustomerInfoUpdate(customerInfo)
         }

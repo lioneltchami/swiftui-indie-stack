@@ -55,7 +55,8 @@ final class AuthManager: AuthServiceProtocol {
     static let shared = AuthManager()
     @ObservationIgnored private let firestoreManager = FirestoreManager.shared
 
-    /// Current user ID (Firebase UID or device ID depending on mode)
+    /// Current user ID (Firebase UID or device ID depending on mode).
+    /// Must be accessed from MainActor because Firebase mode reads `user?.uid`.
     var userId: String {
         #if canImport(Firebase)
         if AppConfiguration.useFirebase {
@@ -63,6 +64,22 @@ final class AuthManager: AuthServiceProtocol {
         }
         #endif
         return localUserId
+    }
+
+    /// Device-based user ID safe to read from any actor context.
+    /// Use this from RevenueCat delegates, TelemetryDeck callbacks, or any
+    /// off-main-actor code that only needs the local device identity.
+    /// In Firebase mode, prefer `userId` on MainActor for the Firebase UID.
+    nonisolated var nonisolatedLocalUserId: String {
+        // Keychain reads are thread-safe via Security framework.
+        // By the time this is called, localUserId will have already saved an ID
+        // to the Keychain during AuthManager.init() on MainActor.
+        if let keychainId = KeychainHelper.shared.readString(forKey: StorageKeys.localUserId) {
+            return keychainId
+        }
+        // Fallback if Keychain read fails (should not happen in normal operation).
+        // We avoid UIDevice here because it is @MainActor in Swift 6.
+        return "unknown"
     }
 
     /// Local device-based user ID for non-Firebase mode
@@ -202,8 +219,10 @@ final class AuthManager: AuthServiceProtocol {
     func configureAuthStateChanges() {
         guard AppConfiguration.useFirebase else { return }
 
-        authStateHandle = Auth.auth().addStateDidChangeListener { _, user in
-            self.updateState(user: user)
+        authStateHandle = Auth.auth().addStateDidChangeListener { [weak self] _, user in
+            Task { @MainActor [weak self] in
+                self?.updateState(user: user)
+            }
         }
     }
 

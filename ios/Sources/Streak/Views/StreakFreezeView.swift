@@ -65,6 +65,7 @@ struct StreakFreezeView: View {
         .padding()
         .background(Color(.secondarySystemBackground))
         .cornerRadius(16)
+        .liquidGlass(cornerRadius: 16)
         .accessibilityIdentifier(AccessibilityID.Streak.freezeView)
     }
 }

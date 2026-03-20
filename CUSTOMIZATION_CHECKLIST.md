@@ -52,7 +52,7 @@ Review `AppConfiguration.swift` and set your desired configuration:
 
 - [ ] Update colors in `UI/Theme/AppColors.swift`
 - [ ] Update fonts in `UI/Theme/AppFonts.swift`
-- [ ] Customize onboarding screens in `OnboardingView.swift`
+- [ ] Customize onboarding screens in `OnboardingFlowView.swift`
 - [ ] Replace placeholder text in `HomeView` ("Welcome to MyApp")
 - [ ] Remove template credit link in `SettingsView` (or keep it!)
 
@@ -77,12 +77,12 @@ Review `AppConfiguration.swift` and set your desired configuration:
 
 The onboarding uses a 5-screen flow. Customize each screen to match your app's value proposition:
 
-- [ ] **Screen 1 (Welcome)**: Update headline, subheadline, and hero image in `WelcomeScreen.swift`
+- [ ] **Screen 1 (Welcome)**: Update headline, subheadline, and hero image in `ValueHookScreen.swift`
 - [ ] **Screen 2 (Goal selection)**: Update goal options in `PersonalizationScreen1.swift` (id, title key, description key, icon, color)
 - [ ] **Screen 3 (Frequency selection)**: Update frequency options in `OnboardingState.GoalFrequency` enum
 - [ ] **Screen 4 (Notification priming)**: Update benefit descriptions in `NotificationPrimingScreen.swift` localization keys
 - [ ] **Screen 5 (Paywall / Get started)**: Configure whether to show a paywall or a final CTA screen
-- [ ] Add/remove onboarding screens by adjusting `OnboardingState.totalSteps` and the step switch in `OnboardingContainerView`
+- [ ] Add/remove onboarding screens by adjusting `OnboardingState.totalSteps` and the step switch in `OnboardingFlowView`
 
 ## 10. Custom Paywall
 
@@ -155,7 +155,13 @@ Customize the iPad sidebar layout:
 - [ ] Set preferred `NavigationSplitViewVisibility` (`.all`, `.detailOnly`, `.doubleColumn`)
 - [ ] Test on iPad simulator and physical device in both portrait and landscape
 
-## 17. Final Checks
+## 17. TipKit Tips
+
+- [ ] Customize tip titles and messages in `ios/Sources/App/AppTips.swift`
+- [ ] Adjust tip trigger rules (e.g., change streak completion count threshold from 3)
+- [ ] Review `Tips.configure()` display frequency in `MyApp.swift` (default: `.weekly`)
+
+## 18. Final Checks
 
 - [ ] Run `swiftlint lint` and fix all warnings
 - [ ] Run all tests and verify passing

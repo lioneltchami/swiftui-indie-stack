@@ -86,10 +86,10 @@ extension String {
         case "about":
             return .cyan
         default:
-            // Generate consistent color from hash
-            let hash = abs(self.hashValue)
+            // Generate consistent color from stable hash (deterministic across launches)
+            let stableHash = self.lowercased().utf8.reduce(0) { $0 &+ Int($1) }
             let colors: [Color] = [.blue, .purple, .green, .orange, .red, .pink, .teal, .cyan]
-            return colors[hash % colors.count]
+            return colors[abs(stableHash) % colors.count]
         }
     }
 

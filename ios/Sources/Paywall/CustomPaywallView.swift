@@ -227,15 +227,13 @@ struct CustomPaywallView: View {
             .accessibilityIdentifier(AccessibilityID.Paywall.restoreButton)
 
             HStack(spacing: 4) {
-                Link(
-                    String(localized: "paywall_terms"),
-                    destination: URL(string: AppConfiguration.termsOfServiceURL)!
-                )
+                if let termsURL = URL(string: AppConfiguration.termsOfServiceURL) {
+                    Link(String(localized: "paywall_terms"), destination: termsURL)
+                }
                 Text("|").foregroundColor(.secondary)
-                Link(
-                    String(localized: "paywall_privacy"),
-                    destination: URL(string: AppConfiguration.privacyPolicyURL)!
-                )
+                if let privacyURL = URL(string: AppConfiguration.privacyPolicyURL) {
+                    Link(String(localized: "paywall_privacy"), destination: privacyURL)
+                }
             }
             .font(.caption)
             .foregroundColor(.secondary)
@@ -257,11 +255,13 @@ struct CustomPaywallView: View {
             ]
         )
 
-        // Dismiss the custom paywall and present RevenueCat's native
-        // paywall which handles the full purchase flow, receipt
-        // validation, and entitlement granting.
+        // Dismiss the custom paywall first, then delay before presenting
+        // RevenueCat's native paywall to avoid a dismiss/present race condition.
         dismiss()
-        PaywallManager.shared.triggerPaywall()
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(500))
+            PaywallManager.shared.triggerPaywall()
+        }
     }
 }
 

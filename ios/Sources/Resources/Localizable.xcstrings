@@ -551,6 +551,16 @@
                 }
             }
         },
+        "streak_complete_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete"
+                    }
+                }
+            }
+        },
         "login_sign_in_to": {
             "localizations": {
                 "en": {
@@ -2457,6 +2467,176 @@
                     "stringUnit": {
                         "state": "translated",
                         "value": "%lld days"
+                    }
+                }
+            }
+        },
+        "tip_freeze_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Protect Your Streak"
+                    }
+                }
+            }
+        },
+        "tip_freeze_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Use a streak freeze to keep your streak alive on days you can't complete your goal."
+                    }
+                }
+            }
+        },
+        "tip_milestone_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Share Your Achievement"
+                    }
+                }
+            }
+        },
+        "tip_milestone_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Celebrate your milestone by sharing it with friends and family."
+                    }
+                }
+            }
+        },
+        "tip_siri_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Use Siri to Log Habits"
+                    }
+                }
+            }
+        },
+        "tip_siri_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Say \"Complete my goal\" to Siri to quickly log your daily habit without opening the app."
+                    }
+                }
+            }
+        },
+        "tip_repair_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Repair Your Streak"
+                    }
+                }
+            }
+        },
+        "tip_repair_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Premium members can restore a broken streak. Don't let one missed day erase your progress."
+                    }
+                }
+            }
+        },
+        "control_log_habit": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Log Habit"
+                    }
+                }
+            }
+        },
+        "control_display_name": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Log Habit"
+                    }
+                }
+            }
+        },
+        "control_description": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Quickly mark your daily goal as complete from Control Center."
+                    }
+                }
+            }
+        },
+        "subscription_upgrade_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Upgrade Your Plan"
+                    }
+                }
+            }
+        },
+        "subscription_upgrade_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Save more with an annual subscription"
+                    }
+                }
+            }
+        },
+        "subscription_upgrade_success": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Subscription upgraded successfully!"
+                    }
+                }
+            }
+        },
+        "subscription_upgrade_pending": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your upgrade is pending approval."
+                    }
+                }
+            }
+        },
+        "subscription_upgrade_error": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Something went wrong. Please try again."
+                    }
+                }
+            }
+        },
+        "privacy_analytics_description": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "We use privacy-preserving analytics to improve the app. No personal information is collected."
                     }
                 }
             }

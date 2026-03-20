@@ -56,6 +56,6 @@ final class OnboardingState {
     }
 
     var progress: Double {
-        Double(currentStep) / Double(totalSteps)
+        Double(currentStep + 1) / Double(totalSteps)
     }
 }

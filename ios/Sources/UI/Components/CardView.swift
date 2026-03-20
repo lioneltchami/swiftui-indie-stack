@@ -34,6 +34,7 @@ struct CardView<Content: View>: View {
             .padding(padding)
             .background(backgroundColor)
             .cornerRadius(cornerRadius)
+            .liquidGlass(cornerRadius: cornerRadius)
             .hoverEffect(.highlight)
             .if(shadow) { view in
                 view.shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)

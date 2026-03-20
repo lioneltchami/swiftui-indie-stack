@@ -16,13 +16,12 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
     @State private var image: UIImage?
     @State private var isLoading = false
 
-    private static var cache: URLCache {
-        let cache = URLCache(
+    private static let cache: URLCache = {
+        URLCache(
             memoryCapacity: 50 * 1024 * 1024,  // 50 MB memory
             diskCapacity: 200 * 1024 * 1024     // 200 MB disk
         )
-        return cache
-    }
+    }()
 
     var body: some View {
         Group {

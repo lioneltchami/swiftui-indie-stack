@@ -85,7 +85,7 @@ final class LibraryViewModel: LibraryServiceProtocol {
         let sortedEntries = index.articles
             .filter { article in
                 let isPublished = article.publishDate <= now
-                let isNotExpired = article.expiryDate == nil || article.expiryDate! >= now
+                let isNotExpired = article.expiryDate.map { $0 >= now } ?? true
                 return isPublished && isNotExpired
             }
             .sorted(by: { $0.publishDate > $1.publishDate })
@@ -139,10 +139,10 @@ final class LibraryViewModel: LibraryServiceProtocol {
     // MARK: - Content Fetching
 
     func fetchEntryContent(for entry: LibraryEntry) async throws -> String {
-        let versionHash = entry.version.hashValue
+        let versionKey = entry.version
 
         // Check cache first
-        if let cachedContent = cacheManager.getCachedContent(for: entry.id, version: versionHash) {
+        if let cachedContent = cacheManager.getCachedContent(for: entry.id, version: versionKey) {
             return cachedContent
         }
 
@@ -163,7 +163,7 @@ final class LibraryViewModel: LibraryServiceProtocol {
                 userInfo: [NSLocalizedDescriptionKey: "Invalid content encoding"]
             )
         }
-        cacheManager.cacheContent(content, for: entry.id, version: versionHash)
+        cacheManager.cacheContent(content, for: entry.id, version: versionKey)
         return content
     }
 

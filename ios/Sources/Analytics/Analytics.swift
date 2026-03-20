@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if canImport(TelemetryDeck)
 import TelemetryDeck
+#endif
 
 /// Centralized analytics tracking using TelemetryDeck
 final class Analytics {
@@ -24,6 +26,7 @@ final class Analytics {
         event: String,
         parameters: [String: Any] = [:]
     ) {
+        #if canImport(TelemetryDeck)
         // Move analytics tracking to background queue
         DispatchQueue.global(qos: .utility).async {
             // Convert parameters to strings for TelemetryDeck
@@ -34,6 +37,7 @@ final class Analytics {
 
             TelemetryDeck.signal(event, parameters: telemetryProperties)
         }
+        #endif
     }
 
     // MARK: - Common Events

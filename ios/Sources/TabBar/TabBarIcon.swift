@@ -71,11 +71,11 @@ struct TabBarIcon: View {
     }
 
     private var tabAccessibilityID: String {
-        switch tabName {
-        case "Home": return AccessibilityID.TabBar.homeTab
-        case "Library": return AccessibilityID.TabBar.libraryTab
-        case "Settings": return AccessibilityID.TabBar.settingsTab
-        default: return "tab_\(tabName.lowercased())"
+        switch assignedTab {
+        case 0: return AccessibilityID.TabBar.homeTab
+        case 1: return AccessibilityID.TabBar.libraryTab
+        case 2: return AccessibilityID.TabBar.settingsTab
+        default: return "tab_\(assignedTab)"
         }
     }
 }

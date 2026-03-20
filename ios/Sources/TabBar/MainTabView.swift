@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 #if canImport(FirebaseAuth)
 import FirebaseAuth
@@ -187,6 +188,10 @@ struct HomeView: View {
                             )
                             .padding(.horizontal)
                         }
+
+                        // TipKit: Streak freeze protection tip
+                        TipView(StreakFreezeTip())
+                            .padding(.horizontal)
 
                         // Streak repair card (when a previous streak can be restored)
                         if streakProvider.streakData.streakRepairable,
@@ -372,6 +377,12 @@ struct HomeView: View {
         showGoalCompleted = true
         Analytics.track(event: AnalyticsEvents.goalCompleted)
 
+        // Donate to TipKit events for contextual tip display
+        Task {
+            await StreakFreezeTip.streakCompletionCount.donate()
+            await SiriShortcutTip.manualLogCount.donate()
+        }
+
         // Show milestone share sheet if a milestone was just reached
         if streakProvider.isMilestone {
             showMilestoneSheet = true
@@ -540,13 +551,18 @@ struct SettingsView: View {
 
                 // About Section
                 Section(String(localized: "settings_about_section")) {
-                    Link(String(localized: "settings_terms_of_service"), destination: URL(string: AppConfiguration.termsOfServiceURL)!)
-                    Link(String(localized: "settings_privacy_policy"), destination: URL(string: AppConfiguration.privacyPolicyURL)!)
+                    if let termsURL = URL(string: AppConfiguration.termsOfServiceURL) {
+                        Link(String(localized: "settings_terms_of_service"), destination: termsURL)
+                    }
+                    if let privacyURL = URL(string: AppConfiguration.privacyPolicyURL) {
+                        Link(String(localized: "settings_privacy_policy"), destination: privacyURL)
+                    }
                 }
 
                 // Template Credit (feel free to remove when customizing)
                 Section {
-                    Link(destination: URL(string: "https://github.com/cliffordh/swiftui-indie-stack")!) {
+                    if let url = URL(string: "https://github.com/cliffordh/swiftui-indie-stack") {
+                    Link(destination: url) {
                         HStack {
                             Text(String(localized: "settings_built_with"))
                                 .font(.footnote)
@@ -556,13 +572,18 @@ struct SettingsView: View {
                         }
                         .foregroundColor(.secondary)
                     }
+                    }
                 }
             }
             .navigationTitle(String(localized: "settings_navigation_title"))
             .navigationDestination(for: SettingsRoute.self) { route in
                 switch route {
                 case .signIn:
+                    #if canImport(GoogleSignIn)
                     LoginView()
+                    #else
+                    Text("Sign-in is not available")
+                    #endif
                 }
             }
         }

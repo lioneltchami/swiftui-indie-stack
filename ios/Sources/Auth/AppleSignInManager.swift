@@ -43,9 +43,10 @@ class AppleSignInManager: NSObject {
 
     /// Configure the Apple Sign-In request with scopes and nonce
     func requestAppleAuthorization(_ request: ASAuthorizationAppleIDRequest) {
-        AppleSignInManager.currentNonce = randomNonceString()
+        let nonce = randomNonceString()
+        AppleSignInManager.currentNonce = nonce
         request.requestedScopes = [.fullName, .email]
-        request.nonce = sha256(AppleSignInManager.currentNonce!)
+        request.nonce = sha256(nonce)
     }
 }
 

@@ -81,6 +81,9 @@ struct PricingTierCard: View {
                     )
             )
             .clipShape(RoundedRectangle(cornerRadius: 16))
+            .if(isSelected) { view in
+                view.liquidGlass(cornerRadius: 16)
+            }
             .shadow(
                 color: isRecommended ? AppColors.primary.opacity(0.15) : Color.clear,
                 radius: isRecommended ? 8 : 0,

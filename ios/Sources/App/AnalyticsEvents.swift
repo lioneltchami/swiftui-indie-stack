@@ -50,6 +50,15 @@ enum AnalyticsEvents {
     /// User restored previous purchases
     static let purchasesRestored = "purchases_restored"
 
+    /// User upgraded their subscription plan (e.g., monthly to annual)
+    static let subscriptionUpgraded = "subscription.upgraded"
+
+    /// Subscription upgrade is pending approval (e.g., Ask to Buy)
+    static let subscriptionUpgradePending = "subscription.upgrade_pending"
+
+    /// User cancelled the subscription upgrade flow
+    static let subscriptionUpgradeCancelled = "subscription.upgrade_cancelled"
+
     // MARK: - App Review
 
     /// App Store review prompt was requested

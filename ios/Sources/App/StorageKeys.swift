@@ -120,9 +120,9 @@ enum StorageKeys {
     /// Generate cache key for a specific library entry's content
     /// - Parameters:
     ///   - id: The library entry identifier
-    ///   - version: The content version hash
+    ///   - version: The content version string (stable across app launches, unlike hashValue)
     /// - Returns: The UserDefaults key for the cached content
-    static func libraryContent(id: String, version: Int) -> String {
+    static func libraryContent(id: String, version: String) -> String {
         "\(libraryContentPrefix)\(id).\(version)"
     }
 

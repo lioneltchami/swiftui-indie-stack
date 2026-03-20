@@ -76,22 +76,24 @@ final class StreakViewModel: StreakServiceProtocol {
         isLoading = true
 
         listener = db.collection("users").document(userId)
-            .addSnapshotListener { [weak self] documentSnapshot, error in
-                guard let self = self else { return }
+            .addSnapshotListener { @Sendable [weak self] documentSnapshot, error in
+                Task { @MainActor in
+                    guard let self = self else { return }
 
-                self.isLoading = false
+                    self.isLoading = false
 
-                if let error = error {
-                    debugPrint("Error listening to streak updates: \(error)")
-                    return
+                    if let error = error {
+                        debugPrint("Error listening to streak updates: \(error)")
+                        return
+                    }
+
+                    guard let data = documentSnapshot?.data(),
+                          let streakDict = data["streak"] as? [String: Any] else {
+                        return
+                    }
+
+                    self.updateFromFirestore(streakDict)
                 }
-
-                guard let data = documentSnapshot?.data(),
-                      let streakDict = data["streak"] as? [String: Any] else {
-                    return
-                }
-
-                self.updateFromFirestore(streakDict)
             }
         #endif
     }
@@ -188,40 +190,74 @@ final class StreakViewModel: StreakServiceProtocol {
         }
 
         // Reset monthly freeze allocation if needed
-        let resolvedFreezesAvailable = resetMonthlyFreezesIfNeeded(
+        let monthlyResolvedFreezes = resetMonthlyFreezesIfNeeded(
             currentFreezes: freezesAvailable,
             freezesUsed: freezesUsedThisPeriod
         )
 
-        // Check if streak is at risk (no activity yesterday in local mode)
+        // Check if streak is at risk (last activity was yesterday, need to complete today)
         var isAtRisk = false
+        var resolvedCurrentStreak = currentStreak
+        var resolvedFreezeActive = freezeActive
+        var resolvedFreezesAvailable = monthlyResolvedFreezes
+        var resolvedFreezesUsed = freezesUsedThisPeriod
+        var resolvedStreakRepairable = streakRepairable
+        var resolvedLastStreakBeforeBreak = lastStreakBeforeBreak
+
         if let last = lastActivityDate {
             let calendar = Calendar.current
-            let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
-            isAtRisk = !calendar.isDate(last, inSameDayAs: Date()) &&
-                       !calendar.isDate(last, inSameDayAs: yesterday)
+            if calendar.isDate(last, inSameDayAs: Date()) {
+                // Completed today -- not at risk
+                isAtRisk = false
+            } else if let yesterday = calendar.date(byAdding: .day, value: -1, to: Date()),
+                      calendar.isDate(last, inSameDayAs: yesterday) {
+                // Last activity was yesterday -- at risk, user needs to complete today
+                isAtRisk = true
+            } else {
+                // More than 1 day missed -- streak is broken, not "at risk"
+                isAtRisk = false
+
+                // Auto-freeze: if exactly one day was missed and freezes are available,
+                // consume a freeze to preserve the streak
+                if resolvedFreezesAvailable > 0 && resolvedCurrentStreak > 0 {
+                    let daysSinceLast = calendar.dateComponents([.day], from: calendar.startOfDay(for: last), to: calendar.startOfDay(for: Date())).day ?? 0
+                    if daysSinceLast == 2 {
+                        // Exactly one missed day -- auto-freeze preserves streak
+                        resolvedFreezesAvailable -= 1
+                        resolvedFreezesUsed += 1
+                        resolvedFreezeActive = true
+                        // Streak is preserved, mark as at risk since they still need to complete today
+                        isAtRisk = true
+                    }
+                }
+            }
         }
 
         self.streakData = StreakData(
-            currentStreak: currentStreak,
+            currentStreak: resolvedCurrentStreak,
             bestStreak: bestStreak,
             lastActivityDate: lastActivityDate,
             streakStartDate: streakStartDate,
             isAtRisk: isAtRisk,
             freezesAvailable: resolvedFreezesAvailable,
-            freezeActive: freezeActive,
+            freezeActive: resolvedFreezeActive,
             activeDays: activeDays,
-            freezesUsedThisPeriod: freezesUsedThisPeriod,
-            streakRepairable: streakRepairable,
-            lastStreakBeforeBreak: lastStreakBeforeBreak
+            freezesUsedThisPeriod: resolvedFreezesUsed,
+            streakRepairable: resolvedStreakRepairable,
+            lastStreakBeforeBreak: resolvedLastStreakBeforeBreak
         )
+
+        // Persist auto-freeze changes if any were made
+        if resolvedFreezeActive != freezeActive || resolvedFreezesAvailable != monthlyResolvedFreezes {
+            saveLocalData()
+        }
 
         // Sync to widget
         WidgetHelper.updateWidget(with: self.streakData)
 
         // Schedule streak reminder if streak is at risk and user has a streak worth protecting
-        if isAtRisk && currentStreak > 0 {
-            NotificationScheduler.scheduleStreakReminder(streakCount: currentStreak)
+        if isAtRisk && resolvedCurrentStreak > 0 {
+            NotificationScheduler.scheduleStreakReminder(streakCount: resolvedCurrentStreak)
         }
     }
 
@@ -285,16 +321,9 @@ final class StreakViewModel: StreakServiceProtocol {
                 // Continue streak
                 newCurrentStreak += 1
             } else if streakData.freezeActive {
-                // Freeze was active, streak preserved -- continue it
+                // Freeze was auto-applied in loadLocalData(), streak preserved -- continue it
                 newCurrentStreak += 1
                 newFreezeActive = false
-            } else if newFreezesAvailable > 0 && newCurrentStreak > 0 {
-                // Auto-freeze: streak would break but user has freezes available
-                newFreezesAvailable -= 1
-                newFreezesUsed += 1
-                newFreezeActive = true
-                // Streak is preserved, continue it
-                newCurrentStreak += 1
             } else {
                 // Streak broken, save previous streak for repair option
                 if newCurrentStreak >= 3 {
@@ -458,8 +487,10 @@ final class StreakViewModel: StreakServiceProtocol {
         }
     }
 
-    /// Whether streaks are enabled
-    var isEnabled: Bool {
+    /// Whether streaks are enabled.
+    /// Marked nonisolated because AppConfiguration is a static enum (Sendable),
+    /// safe to read from any actor context.
+    nonisolated var isEnabled: Bool {
         AppConfiguration.enableStreaks
     }
 }

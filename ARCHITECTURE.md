@@ -547,6 +547,13 @@ Current feature areas to be aware of (Phases 4-7):
 - **Live Activity**: Dynamic Island and Lock Screen live activities for active streaks
 - **iPad**: `NavigationSplitView` for sidebar-based layouts, `AppCommands` for keyboard shortcuts
 - **Accessibility**: `AccessibilityIdentifiers.swift` for UI testing; always add `.accessibilityIdentifier()`
+- **TipKit**: `AppTips.swift` provides 4 contextual tips (StreakFreezeTip, MilestoneShareTip, SiriShortcutTip, StreakRepairTip) using event-based rules; `Tips.configure()` is called in `MyApp.swift`
+- **Liquid Glass**: `LiquidGlassModifier.swift` provides a `.liquidGlass()` modifier with `#available(iOS 26.0, *)` runtime check; applied to CardView, PricingTierCard, and StreakFreezeView
+- **Control Center Widget**: `HabitControlWidget.swift` provides an iOS 18+ `ControlWidget` for logging habits from Control Center, reusing `CompleteGoalIntent`
+- **SubscriptionUpgradeView**: StoreKit 2 `SubscriptionStoreView` wrapper for upgrade/crossgrade flows shown at milestone screens
+- **Interactive Widget**: Widget target includes `Button(intent: CompleteGoalWidgetIntent())` for tap-to-complete directly on the home screen
+- **Swift 6.2 Preparation**: `@Sendable` closures and `nonisolated` properties adopted throughout; `ConcurrencyGuide.swift` documents the migration path
+- **Privacy Manifest**: Complete `PrivacyInfo.xcprivacy` declares UserDefaults, FileTimestamp, and DiskSpace API usage; `docs/privacy-questionnaire.md` maps each declaration to App Store Connect questions
 
 When modifying existing features:
 

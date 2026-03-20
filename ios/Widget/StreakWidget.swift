@@ -76,6 +76,12 @@ struct StreakWidgetEntryView: View {
 struct SmallStreakView: View {
     let streakData: WidgetStreakData
 
+    /// Whether the user already completed the goal today
+    private var goalCompletedToday: Bool {
+        guard let lastActivity = streakData.lastActivityDate else { return false }
+        return Calendar.current.isDateInToday(lastActivity)
+    }
+
     var body: some View {
         ZStack {
             // Background gradient
@@ -107,6 +113,14 @@ struct SmallStreakView: View {
                     : String(localized: "streak_day_plural"))
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(.white.opacity(0.9))
+
+                // Interactive complete button
+                if !goalCompletedToday {
+                    Button(intent: CompleteGoalWidgetIntent()) {
+                        Label(String(localized: "streak_complete_button"), systemImage: "checkmark.circle")
+                    }
+                    .tint(.green)
+                }
             }
         }
         .containerBackground(for: .widget) {
