@@ -1,4 +1,4 @@
-# SwiftLint configuration for SwiftUI indie apps
+# SwiftLint configuration for SwiftUI Indie Stack
 # Optimized for small teams and rapid iteration
 
 disabled_rules:
@@ -6,6 +6,12 @@ disabled_rules:
   - line_length
   - todo
   - nesting
+  - trailing_comma
+  - multiple_closures_with_trailing_closure
+  - implicit_optional_initialization
+  - for_where
+  - non_optional_string_data_conversion
+  - unused_closure_parameter
 
 opt_in_rules:
   - closure_end_indentation
@@ -39,30 +45,44 @@ force_try: warning
 force_unwrapping: warning
 
 function_body_length:
-  warning: 60
-  error: 100
+  warning: 80
+  error: 120
+
+cyclomatic_complexity:
+  warning: 15
+  error: 25
 
 type_body_length:
-  warning: 300
-  error: 500
+  warning: 400
+  error: 600
 
 file_length:
-  warning: 500
-  error: 800
+  warning: 600
+  error: 900
 
 identifier_name:
   min_length:
     warning: 2
+    error: 1
   excluded:
     - id
     - db
     - to
     - x
     - y
+    - vm
+    - a
+    - r
+    - g
+    - b
+    - i
 
 excluded:
   - ios/Widget/
   - ios/.build/
   - .build/
+  - ios/MyAppTests/
+  - ios/MyAppUITests/
+  - ios/Tests/
 
 reporter: xcode

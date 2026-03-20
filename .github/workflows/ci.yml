@@ -8,7 +8,6 @@ on:
 
 jobs:
   # NOTE: April 2026 Xcode 26 mandate -- all App Store submissions must use Xcode 26+.
-  # macos-26 runners are not yet available on all GitHub plan tiers.
   # Update runs-on to macos-26 and xcode-select path once GitHub supports it broadly.
   lint:
     name: SwiftLint
@@ -24,8 +23,8 @@ jobs:
         run: swiftlint lint --reporter github-actions-logging
         working-directory: ios
 
-  build-and-test:
-    name: Build & Test iOS App
+  build:
+    name: Build iOS App
     runs-on: macos-15
     needs: lint
 
@@ -53,33 +52,35 @@ jobs:
             -scheme MyApp \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGNING_ALLOWED=NO \
             -quiet \
             build
 
-      - name: Test
-        run: |
-          cd ios
-          xcodebuild test \
-            -project MyApp.xcodeproj \
-            -scheme MyApp \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
-            -enableCodeCoverage YES \
-            -resultBundlePath TestResults.xcresult \
-            -quiet
-
-      - name: Convert Coverage
-        if: success()
-        run: |
-          xcrun xccov view --report --json ios/TestResults.xcresult > coverage.json
-
-      - name: Upload Coverage to Codecov
-        if: success()
-        uses: codecov/codecov-action@v4
-        with:
-          files: coverage.json
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
+      # NOTE: To enable testing in CI, you must first add MyAppTests and MyAppUITests
+      # targets to the Xcode project (File > New > Target > Unit/UI Testing Bundle),
+      # then enable them in the MyApp scheme's Test action.
+      # Once configured, uncomment the Test step below:
+      #
+      # - name: Test
+      #   run: |
+      #     cd ios
+      #     xcodebuild test \
+      #       -project MyApp.xcodeproj \
+      #       -scheme MyApp \
+      #       -sdk iphonesimulator \
+      #       -destination 'platform=iOS Simulator,name=iPhone 16' \
+      #       -enableCodeCoverage YES \
+      #       -resultBundlePath TestResults.xcresult \
+      #       CODE_SIGNING_ALLOWED=NO \
+      #       -quiet
+      #
+      # - name: Upload Coverage to Codecov
+      #   if: success()
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     files: coverage.json
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     fail_ci_if_error: false
 
   build-firebase-functions:
     name: Build Firebase Functions

@@ -1,5 +1,14 @@
 name: iOS Tests
 
+# NOTE: This workflow requires test targets to be configured in the Xcode project.
+# Before this workflow can run, you must:
+# 1. Open MyApp.xcodeproj in Xcode
+# 2. File > New > Target > Unit Testing Bundle > name "MyAppTests"
+# 3. File > New > Target > UI Testing Bundle > name "MyAppUITests"
+# 4. Add test source files to each target
+# 5. Enable MyAppTests in MyApp scheme > Test action
+# 6. Commit the updated .xcodeproj
+
 on:
   pull_request:
     branches: [main]
@@ -23,7 +32,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Select Xcode
-        # NOTE: April 2026 Xcode 26 mandate -- update to Xcode_26.app when macos-26 runners are available.
         run: sudo xcode-select -s /Applications/Xcode_16.2.app
 
       - name: Build and Test
@@ -32,7 +40,7 @@ jobs:
           xcodebuild test \
             -project MyApp.xcodeproj \
             -scheme MyApp \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
             -resultBundlePath TestResults.xcresult \
             -enableCodeCoverage YES \
             CODE_SIGNING_ALLOWED=NO
@@ -51,7 +59,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Select Xcode
-        # NOTE: April 2026 Xcode 26 mandate -- update to Xcode_26.app when macos-26 runners are available.
         run: sudo xcode-select -s /Applications/Xcode_16.2.app
 
       - name: Run UI Tests
@@ -60,7 +67,7 @@ jobs:
           xcodebuild test \
             -project MyApp.xcodeproj \
             -scheme MyAppUITests \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
             -resultBundlePath UITestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO
 
