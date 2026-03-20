@@ -36,9 +36,6 @@ jobs:
           sudo xcode-select -s "$XCODE_PATH"
           xcodebuild -version
 
-      - name: List available simulators
-        run: xcrun simctl list devices available | head -30
-
       - name: Cache SPM
         uses: actions/cache@v4
         with:
@@ -52,13 +49,9 @@ jobs:
       - name: Build
         run: |
           cd ios
-          # Find an available iPhone simulator
-          SIMULATOR=$(xcrun simctl list devices available | grep "iPhone" | head -1 | sed 's/.*(\(.*\)) .*/\1/')
-          echo "Using simulator: $SIMULATOR"
           xcodebuild -project MyApp.xcodeproj \
             -scheme MyApp \
-            -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,id=$SIMULATOR" \
+            -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
             -quiet \
             build
