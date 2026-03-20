@@ -1,24 +1,28 @@
 name: iOS Tests
 
-# NOTE: This workflow requires test targets to be configured in the Xcode project.
-# Before this workflow can run, you must:
+# PREREQUISITE: This workflow requires test targets in the Xcode project.
+# Before enabling, you must:
 # 1. Open MyApp.xcodeproj in Xcode
 # 2. File > New > Target > Unit Testing Bundle > name "MyAppTests"
 # 3. File > New > Target > UI Testing Bundle > name "MyAppUITests"
 # 4. Add test source files to each target
 # 5. Enable MyAppTests in MyApp scheme > Test action
 # 6. Commit the updated .xcodeproj
+#
+# Until then, keep this workflow disabled by setting the 'if' condition to false
+# or removing the workflow file.
 
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - "ios/**"
-      - ".github/workflows/ios-tests.yml"
-  push:
-    branches: [main]
-    paths:
-      - "ios/**"
+  workflow_dispatch: # Manual trigger only until test targets are configured
+  # Uncomment below once test targets exist:
+  # pull_request:
+  #   branches: [main]
+  #   paths:
+  #     - "ios/**"
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - "ios/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -32,7 +36,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          sudo xcode-select -s "$XCODE_PATH"
+
+      - name: Find simulator
+        id: sim
+        run: |
+          SIM_ID=$(xcrun simctl list devices available | grep "iPhone" | head -1 | sed 's/.*(\(.*\)) .*/\1/')
+          echo "id=$SIM_ID" >> $GITHUB_OUTPUT
 
       - name: Build and Test
         run: |
@@ -40,7 +52,7 @@ jobs:
           xcodebuild test \
             -project MyApp.xcodeproj \
             -scheme MyApp \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.id }}" \
             -resultBundlePath TestResults.xcresult \
             -enableCodeCoverage YES \
             CODE_SIGNING_ALLOWED=NO
@@ -59,7 +71,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          sudo xcode-select -s "$XCODE_PATH"
+
+      - name: Find simulator
+        id: sim
+        run: |
+          SIM_ID=$(xcrun simctl list devices available | grep "iPhone" | head -1 | sed 's/.*(\(.*\)) .*/\1/')
+          echo "id=$SIM_ID" >> $GITHUB_OUTPUT
 
       - name: Run UI Tests
         run: |
@@ -67,7 +87,7 @@ jobs:
           xcodebuild test \
             -project MyApp.xcodeproj \
             -scheme MyAppUITests \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.id }}" \
             -resultBundlePath UITestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO
 

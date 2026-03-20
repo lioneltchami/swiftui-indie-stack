@@ -7,8 +7,6 @@ on:
     branches: [main]
 
 jobs:
-  # NOTE: April 2026 Xcode 26 mandate -- all App Store submissions must use Xcode 26+.
-  # Update runs-on to macos-26 and xcode-select path once GitHub supports it broadly.
   lint:
     name: SwiftLint
     runs-on: macos-15
@@ -32,8 +30,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+      - name: Select Xcode
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          sudo xcode-select -s "$XCODE_PATH"
+          xcodebuild -version
+
+      - name: List available simulators
+        run: xcrun simctl list devices available | head -30
 
       - name: Cache SPM
         uses: actions/cache@v4
@@ -48,39 +52,23 @@ jobs:
       - name: Build
         run: |
           cd ios
+          # Find an available iPhone simulator
+          SIMULATOR=$(xcrun simctl list devices available | grep "iPhone" | head -1 | sed 's/.*(\(.*\)) .*/\1/')
+          echo "Using simulator: $SIMULATOR"
           xcodebuild -project MyApp.xcodeproj \
             -scheme MyApp \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination "platform=iOS Simulator,id=$SIMULATOR" \
             CODE_SIGNING_ALLOWED=NO \
             -quiet \
             build
 
-      # NOTE: To enable testing in CI, you must first add MyAppTests and MyAppUITests
-      # targets to the Xcode project (File > New > Target > Unit/UI Testing Bundle),
-      # then enable them in the MyApp scheme's Test action.
-      # Once configured, uncomment the Test step below:
-      #
-      # - name: Test
-      #   run: |
-      #     cd ios
-      #     xcodebuild test \
-      #       -project MyApp.xcodeproj \
-      #       -scheme MyApp \
-      #       -sdk iphonesimulator \
-      #       -destination 'platform=iOS Simulator,name=iPhone 16' \
-      #       -enableCodeCoverage YES \
-      #       -resultBundlePath TestResults.xcresult \
-      #       CODE_SIGNING_ALLOWED=NO \
-      #       -quiet
-      #
-      # - name: Upload Coverage to Codecov
-      #   if: success()
-      #   uses: codecov/codecov-action@v4
-      #   with:
-      #     files: coverage.json
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     fail_ci_if_error: false
+      # NOTE: To enable testing in CI, add test targets in Xcode first:
+      # 1. File > New > Target > Unit Testing Bundle > "MyAppTests"
+      # 2. File > New > Target > UI Testing Bundle > "MyAppUITests"
+      # 3. Enable MyAppTests in MyApp scheme > Test action
+      # 4. Commit the updated .xcodeproj
+      # Then uncomment the test step below.
 
   build-firebase-functions:
     name: Build Firebase Functions
