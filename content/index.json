@@ -1,0 +1,42 @@
+{
+  "lastUpdated": "2026-03-19T00:00:00Z",
+  "version": "1.0.0",
+  "articles": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started with SwiftUI Indie Stack",
+      "summary": "Learn how to set up and customize the template for your app.",
+      "contentURL": "https://raw.githubusercontent.com/cliffordh/swiftui-indie-stack/main/content/articles/getting-started.md",
+      "publishDate": "2026-03-01T00:00:00Z",
+      "expiryDate": null,
+      "category": "getting_started",
+      "imageURL": null,
+      "featured": true,
+      "version": "1.0"
+    },
+    {
+      "id": "customization-guide",
+      "title": "Customizing Your App",
+      "summary": "A comprehensive guide to making the template your own.",
+      "contentURL": "https://raw.githubusercontent.com/cliffordh/swiftui-indie-stack/main/content/articles/customization-guide.md",
+      "publishDate": "2026-03-05T00:00:00Z",
+      "expiryDate": null,
+      "category": "features",
+      "imageURL": null,
+      "featured": false,
+      "version": "1.0"
+    },
+    {
+      "id": "deployment-guide",
+      "title": "Deploying to the App Store",
+      "summary": "Step-by-step guide to submitting your app for review.",
+      "contentURL": "https://raw.githubusercontent.com/cliffordh/swiftui-indie-stack/main/content/articles/deployment-guide.md",
+      "publishDate": "2026-03-10T00:00:00Z",
+      "expiryDate": null,
+      "category": "tips",
+      "imageURL": null,
+      "featured": true,
+      "version": "1.0"
+    }
+  ]
+}

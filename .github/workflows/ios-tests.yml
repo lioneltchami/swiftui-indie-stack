@@ -1,0 +1,72 @@
+name: iOS Tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "ios/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Unit & Snapshot Tests
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        # NOTE: April 2026 Xcode 26 mandate -- update to Xcode_26.app when macos-26 runners are available.
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Build and Test
+        run: |
+          cd ios
+          xcodebuild test \
+            -project MyApp.xcodeproj \
+            -scheme MyApp \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -resultBundlePath TestResults.xcresult \
+            -enableCodeCoverage YES \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ios/TestResults.xcresult
+
+  ui-test:
+    name: UI Tests
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        # NOTE: April 2026 Xcode 26 mandate -- update to Xcode_26.app when macos-26 runners are available.
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Run UI Tests
+        run: |
+          cd ios
+          xcodebuild test \
+            -project MyApp.xcodeproj \
+            -scheme MyAppUITests \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -resultBundlePath UITestResults.xcresult \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload UI Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-results
+          path: ios/UITestResults.xcresult

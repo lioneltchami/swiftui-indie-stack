@@ -1,0 +1,58 @@
+name: Deploy to TestFlight
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      build_number:
+        description: "Build number override (optional)"
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    name: Build & Upload to TestFlight
+    runs-on: macos-15
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # NOTE: April 2026 Xcode 26 mandate -- update to Xcode_26.app when macos-26 runners are available.
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Install Fastlane
+        run: |
+          gem install fastlane
+          gem install cocoapods
+
+      - name: Update Fastlane
+        run: gem update fastlane
+
+      - name: Setup code signing
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.ASC_KEY }}
+        run: |
+          cd ios
+          fastlane match appstore --readonly
+
+      - name: Build and upload
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.ASC_KEY }}
+        run: |
+          cd ios
+          fastlane beta
+
+      - name: Notify
+        if: success()
+        run: echo "Successfully uploaded to TestFlight"

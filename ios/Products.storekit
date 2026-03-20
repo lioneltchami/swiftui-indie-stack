@@ -1,0 +1,70 @@
+{
+    "identifier": "com.myapp.products",
+    "type": "StoreKit Configuration",
+    "version": 3,
+    "products": [
+        {
+            "displayPrice": "9.99",
+            "familyShareable": false,
+            "internalID": "monthly_premium",
+            "localizations": [
+                {
+                    "description": "Monthly premium access",
+                    "displayName": "Monthly Premium",
+                    "locale": "en_US"
+                }
+            ],
+            "productID": "com.myapp.monthly",
+            "referenceName": "Monthly Premium",
+            "subscriptionGroupID": "premium_group",
+            "type": "AutoRenewableSubscription",
+            "subscriptionPeriod": "P1M"
+        },
+        {
+            "displayPrice": "59.99",
+            "familyShareable": false,
+            "internalID": "yearly_premium",
+            "localizations": [
+                {
+                    "description": "Yearly premium access with 50% savings",
+                    "displayName": "Yearly Premium",
+                    "locale": "en_US"
+                }
+            ],
+            "productID": "com.myapp.yearly",
+            "referenceName": "Yearly Premium",
+            "subscriptionGroupID": "premium_group",
+            "type": "AutoRenewableSubscription",
+            "subscriptionPeriod": "P1Y"
+        },
+        {
+            "displayPrice": "199.99",
+            "familyShareable": false,
+            "internalID": "lifetime_premium",
+            "localizations": [
+                {
+                    "description": "Lifetime premium access",
+                    "displayName": "Lifetime Premium",
+                    "locale": "en_US"
+                }
+            ],
+            "productID": "com.myapp.lifetime",
+            "referenceName": "Lifetime Premium",
+            "type": "NonConsumable"
+        }
+    ],
+    "subscriptionGroups": [
+        {
+            "id": "premium_group",
+            "localizations": [
+                {
+                    "description": "Premium subscription group",
+                    "displayName": "Premium",
+                    "locale": "en_US"
+                }
+            ],
+            "name": "Premium",
+            "subscriptions": ["monthly_premium", "yearly_premium"]
+        }
+    ]
+}

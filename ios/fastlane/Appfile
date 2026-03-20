@@ -1,0 +1,10 @@
+# App metadata for Fastlane
+# See: https://docs.fastlane.tools/advanced/Appfile/
+
+# app_identifier("com.yourcompany.myapp")
+# apple_id("your@email.com")
+# team_id("YOUR_TEAM_ID")
+
+# For App Store Connect API (recommended over password auth):
+# app_store_connect_api_key_id(ENV["APP_STORE_CONNECT_API_KEY_ID"])
+# app_store_connect_api_issuer_id(ENV["APP_STORE_CONNECT_API_ISSUER_ID"])

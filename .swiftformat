@@ -1,0 +1,32 @@
+# SwiftFormat configuration for SwiftUI indie apps
+
+--swiftversion 5.9
+--indent 4
+--indentcase true
+--trimwhitespace always
+--voidtype void
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--closingparen balanced
+--funcattributes prev-line
+--typeattributes prev-line
+--varattributes prev-line
+--maxwidth 120
+--self remove
+--importgrouping alpha
+--stripunusedargs closure-only
+--header strip
+
+# SwiftUI specific
+--enable isEmpty
+--enable sortImports
+--enable redundantSelf
+--enable redundantReturn
+
+# Disable rules that conflict with SwiftUI patterns
+--disable wrapMultilineStatementBraces
+--disable redundantRawValues
+
+# Exclude generated and widget code
+--exclude ios/Widget,.build

@@ -1,0 +1,95 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods (if used)
+Pods/
+Podfile.lock
+
+# Carthage (if used)
+Carthage/Build/
+Carthage/Checkouts/
+
+# Fastlane
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots/
+ios/fastlane/test_output/
+
+# Build artifacts
+ios/build/
+build/
+*.app
+*.framework
+*.dylib
+*.a
+
+# Test results
+*.xcresult
+TestResults/
+coverage/
+
+# Archives
+*.xcarchive
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# OS files
+Thumbs.db
+
+# Node.js (Firebase Functions)
+node_modules/
+npm-debug.log
+yarn-error.log
+firebase-functions/functions/lib/
+
+# Firebase
+.firebase/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+GoogleService-Info.plist
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# AI Assistant configs (keep project-agnostic)
+CLAUDE.md
+.claude/
+.cursor/
+.aider/
+
+# Secrets (never commit)
+*.pem
+*.p12
+*.p8
+secrets/
+credentials/

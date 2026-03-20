@@ -1,0 +1,8 @@
+# Build configuration
+# See: https://docs.fastlane.tools/actions/gym/
+
+project("MyApp.xcodeproj")
+scheme("MyApp")
+clean(true)
+export_method("app-store")
+output_directory("./build")

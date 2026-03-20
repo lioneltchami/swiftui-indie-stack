@@ -1,0 +1,2466 @@
+{
+    "sourceLanguage": "en",
+    "strings": {
+        "onboarding_title_1": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "SwiftUI Indie Stack"
+                    }
+                }
+            }
+        },
+        "onboarding_desc_1": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "A production-ready iOS template. Ship your app in hours, not weeks."
+                    }
+                }
+            }
+        },
+        "onboarding_title_2": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Track Your Progress"
+                    }
+                }
+            }
+        },
+        "onboarding_desc_2": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Build habits and maintain your streak with daily activities."
+                    }
+                }
+            }
+        },
+        "onboarding_title_3": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Learn & Grow"
+                    }
+                }
+            }
+        },
+        "onboarding_desc_3": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Access our library of guides to customize everything."
+                    }
+                }
+            }
+        },
+        "onboarding_next_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Next"
+                    }
+                }
+            }
+        },
+        "onboarding_skip_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Skip"
+                    }
+                }
+            }
+        },
+        "onboarding_get_started_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get Started"
+                    }
+                }
+            }
+        },
+        "home_welcome_prefix": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Welcome to"
+                    }
+                }
+            }
+        },
+        "home_app_name": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "MyApp"
+                    }
+                }
+            }
+        },
+        "home_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "See the Library tab for customization guides"
+                    }
+                }
+            }
+        },
+        "home_goal_completed_today": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Goal Completed Today!"
+                    }
+                }
+            }
+        },
+        "home_complete_goal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete Goal"
+                    }
+                }
+            }
+        },
+        "home_feature_status_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Feature Status"
+                    }
+                }
+            }
+        },
+        "home_show_paywall_demo": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Show Paywall Demo"
+                    }
+                }
+            }
+        },
+        "home_navigation_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Home"
+                    }
+                }
+            }
+        },
+        "home_auth_detail_local": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Local ID"
+                    }
+                }
+            }
+        },
+        "home_auth_detail_apple_google": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Apple/Google"
+                    }
+                }
+            }
+        },
+        "home_auth_detail_anonymous": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Anonymous"
+                    }
+                }
+            }
+        },
+        "home_streak_days_detail": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld days"
+                    }
+                }
+            }
+        },
+        "home_app_review_detail": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "at %lld-day streak"
+                    }
+                }
+            }
+        },
+        "settings_account_section": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Account"
+                    }
+                }
+            }
+        },
+        "settings_email_label": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Email"
+                    }
+                }
+            }
+        },
+        "settings_sign_out": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Sign Out"
+                    }
+                }
+            }
+        },
+        "settings_sign_in": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Sign In"
+                    }
+                }
+            }
+        },
+        "settings_appearance_section": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Appearance"
+                    }
+                }
+            }
+        },
+        "settings_theme_label": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Theme"
+                    }
+                }
+            }
+        },
+        "settings_subscription_section": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Subscription"
+                    }
+                }
+            }
+        },
+        "settings_manage_subscription": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Manage Subscription"
+                    }
+                }
+            }
+        },
+        "settings_restore_purchases": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Restore Purchases"
+                    }
+                }
+            }
+        },
+        "settings_about_section": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "About"
+                    }
+                }
+            }
+        },
+        "settings_terms_of_service": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Terms of Service"
+                    }
+                }
+            }
+        },
+        "settings_privacy_policy": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Privacy Policy"
+                    }
+                }
+            }
+        },
+        "settings_navigation_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Settings"
+                    }
+                }
+            }
+        },
+        "settings_built_with": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Built with SwiftUI Indie Stack"
+                    }
+                }
+            }
+        },
+        "library_navigation_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Library"
+                    }
+                }
+            }
+        },
+        "library_search_placeholder": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Search library..."
+                    }
+                }
+            }
+        },
+        "library_category_all": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "All"
+                    }
+                }
+            }
+        },
+        "library_featured_section": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Featured"
+                    }
+                }
+            }
+        },
+        "library_loading": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Loading library content..."
+                    }
+                }
+            }
+        },
+        "library_error_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Error Loading Content"
+                    }
+                }
+            }
+        },
+        "library_try_again": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Try Again"
+                    }
+                }
+            }
+        },
+        "library_no_category_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "No Articles in this Category"
+                    }
+                }
+            }
+        },
+        "library_no_category_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Try selecting a different category or check back later."
+                    }
+                }
+            }
+        },
+        "library_no_results_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "No Results"
+                    }
+                }
+            }
+        },
+        "library_no_results_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "No matches found for \"%@\""
+                    }
+                }
+            }
+        },
+        "library_empty_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "No Library Entries"
+                    }
+                }
+            }
+        },
+        "library_empty_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Check back later for educational content."
+                    }
+                }
+            }
+        },
+        "library_badge_featured": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "FEATURED"
+                    }
+                }
+            }
+        },
+        "library_badge_new": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "NEW"
+                    }
+                }
+            }
+        },
+        "library_detail_published_prefix": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Published %@"
+                    }
+                }
+            }
+        },
+        "library_detail_error_prefix": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Error: %@"
+                    }
+                }
+            }
+        },
+        "library_detail_try_again": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Try Again"
+                    }
+                }
+            }
+        },
+        "streak_at_risk_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete an activity today to keep your %lld-day streak!"
+                    }
+                }
+            }
+        },
+        "login_sign_in_to": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "sign in to"
+                    }
+                }
+            }
+        },
+        "login_app_name": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your App Name"
+                    }
+                }
+            }
+        },
+        "login_or_divider": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "or"
+                    }
+                }
+            }
+        },
+        "login_terms_prefix": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "By signing in, you agree to our"
+                    }
+                }
+            }
+        },
+        "login_terms_link": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Terms of Service"
+                    }
+                }
+            }
+        },
+        "login_and": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "and"
+                    }
+                }
+            }
+        },
+        "login_privacy_link": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Privacy Policy"
+                    }
+                }
+            }
+        },
+        "tab_home": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Home"
+                    }
+                }
+            }
+        },
+        "tab_library": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Library"
+                    }
+                }
+            }
+        },
+        "tab_settings": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Settings"
+                    }
+                }
+            }
+        },
+        "accessibility_enabled": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Enabled"
+                    }
+                }
+            }
+        },
+        "accessibility_disabled": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Disabled"
+                    }
+                }
+            }
+        },
+        "accessibility_status_on": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "ON"
+                    }
+                }
+            }
+        },
+        "accessibility_status_off": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "OFF"
+                    }
+                }
+            }
+        },
+        "accessibility_streak_active": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Active streak: %@ days"
+                    }
+                }
+            }
+        },
+        "accessibility_streak_inactive": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "No active streak"
+                    }
+                }
+            }
+        },
+        "accessibility_calendar_day_active": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Day %lld, activity completed"
+                    }
+                }
+            }
+        },
+        "accessibility_calendar_day_today": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Day %lld, today"
+                    }
+                }
+            }
+        },
+        "accessibility_calendar_day": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Day %lld"
+                    }
+                }
+            }
+        },
+        "accessibility_featured_badge": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Featured"
+                    }
+                }
+            }
+        },
+        "accessibility_new_badge": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "New"
+                    }
+                }
+            }
+        },
+        "calendar_previous_month": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Previous month"
+                    }
+                }
+            }
+        },
+        "calendar_next_month": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Next month"
+                    }
+                }
+            }
+        },
+        "library_search_toggle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Search"
+                    }
+                }
+            }
+        },
+        "library_refresh": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Refresh"
+                    }
+                }
+            }
+        },
+        "onboarding_hook_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Build Better Habits"
+                    }
+                }
+            }
+        },
+        "onboarding_hook_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Track your goals, build streaks, and become the best version of yourself."
+                    }
+                }
+            }
+        },
+        "onboarding_benefit_1": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Build and maintain daily streaks"
+                    }
+                }
+            }
+        },
+        "onboarding_benefit_2": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Track your progress over time"
+                    }
+                }
+            }
+        },
+        "onboarding_benefit_3": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get smart reminders to stay on track"
+                    }
+                }
+            }
+        },
+        "onboarding_continue": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Continue"
+                    }
+                }
+            }
+        },
+        "personalization_goal_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "What's your goal?"
+                    }
+                }
+            }
+        },
+        "personalization_goal_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "We'll personalize your experience based on your answer."
+                    }
+                }
+            }
+        },
+        "goal_build_habit": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Build a habit"
+                    }
+                }
+            }
+        },
+        "goal_build_habit_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start a new routine and make it stick"
+                    }
+                }
+            }
+        },
+        "goal_stay_consistent": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Stay consistent"
+                    }
+                }
+            }
+        },
+        "goal_stay_consistent_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Keep up with what you've already started"
+                    }
+                }
+            }
+        },
+        "goal_track_progress": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Track progress"
+                    }
+                }
+            }
+        },
+        "goal_track_progress_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "See how far you've come with visual stats"
+                    }
+                }
+            }
+        },
+        "goal_challenge_myself": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Challenge myself"
+                    }
+                }
+            }
+        },
+        "goal_challenge_myself_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Push your limits and achieve new milestones"
+                    }
+                }
+            }
+        },
+        "personalization_frequency_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "How often do you want to practice?"
+                    }
+                }
+            }
+        },
+        "personalization_frequency_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Pick a schedule that works for you. You can always change it later."
+                    }
+                }
+            }
+        },
+        "frequency_daily": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Every day"
+                    }
+                }
+            }
+        },
+        "frequency_daily_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Best for building strong habits fast"
+                    }
+                }
+            }
+        },
+        "frequency_weekdays": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Weekdays only"
+                    }
+                }
+            }
+        },
+        "frequency_weekdays_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Monday through Friday with weekends off"
+                    }
+                }
+            }
+        },
+        "frequency_three_per_week": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "3 times per week"
+                    }
+                }
+            }
+        },
+        "frequency_three_per_week_desc": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Flexible schedule with rest days built in"
+                    }
+                }
+            }
+        },
+        "notification_priming_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Stay on Track"
+                    }
+                }
+            }
+        },
+        "notification_priming_body": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get gentle reminders to help you maintain your streak and celebrate milestones."
+                    }
+                }
+            }
+        },
+        "notification_benefit_streak": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak-at-risk alerts before you lose progress"
+                    }
+                }
+            }
+        },
+        "notification_benefit_milestone": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Milestone celebrations when you hit new records"
+                    }
+                }
+            }
+        },
+        "notification_benefit_content": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Tips and insights to keep you motivated"
+                    }
+                }
+            }
+        },
+        "notification_enable_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Enable Notifications"
+                    }
+                }
+            }
+        },
+        "notification_skip_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Not Now"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Unlock Premium"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_subtitle": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get the most out of your journey with premium features."
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_feature_1": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Unlimited streak freezes"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_feature_2": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak repair when life happens"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_feature_3": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Advanced progress analytics"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_feature_4": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Priority notifications and insights"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_cta": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start Free Trial"
+                    }
+                }
+            }
+        },
+        "onboarding_paywall_skip": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Maybe Later"
+                    }
+                }
+            }
+        },
+        "accessibility_app_mascot": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "App mascot"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_continue": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Continue to next step"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_progress %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Onboarding progress: %lld percent"
+                    }
+                }
+            }
+        },
+        "accessibility_notification_enable": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Enable push notifications"
+                    }
+                }
+            }
+        },
+        "accessibility_notification_skip": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Skip notifications for now"
+                    }
+                }
+            }
+        },
+        "accessibility_paywall_subscribe": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start free trial subscription"
+                    }
+                }
+            }
+        },
+        "accessibility_paywall_skip": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Skip premium subscription"
+                    }
+                }
+            }
+        },
+        "paywall_headline_default": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Unlock Your Full Potential"
+                    }
+                }
+            }
+        },
+        "paywall_subheadline_default": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get unlimited streak freezes, repair, advanced analytics, and more."
+                    }
+                }
+            }
+        },
+        "paywall_headline_urgency": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Limited Time Offer"
+                    }
+                }
+            }
+        },
+        "paywall_subheadline_urgency": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Save 50% on your first year. This offer won't last."
+                    }
+                }
+            }
+        },
+        "paywall_headline_social": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Join Thousands of Achievers"
+                    }
+                }
+            }
+        },
+        "paywall_subheadline_social": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Over 50,000 people already upgraded. See why they love Premium."
+                    }
+                }
+            }
+        },
+        "paywall_headline_minimal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Go Premium"
+                    }
+                }
+            }
+        },
+        "paywall_subheadline_minimal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Unlock all features and take your progress to the next level."
+                    }
+                }
+            }
+        },
+        "paywall_urgency_text": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Limited time: 50% off first year"
+                    }
+                }
+            }
+        },
+        "paywall_social_proof": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Join 50,000+ premium members"
+                    }
+                }
+            }
+        },
+        "paywall_close": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Close paywall"
+                    }
+                }
+            }
+        },
+        "paywall_best_value": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "BEST VALUE"
+                    }
+                }
+            }
+        },
+        "paywall_plan_monthly": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Monthly"
+                    }
+                }
+            }
+        },
+        "paywall_plan_yearly": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Yearly"
+                    }
+                }
+            }
+        },
+        "paywall_plan_lifetime": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Lifetime"
+                    }
+                }
+            }
+        },
+        "paywall_savings_yearly": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Save 50%"
+                    }
+                }
+            }
+        },
+        "paywall_monthly_equivalent %@": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Just %@ billed annually"
+                    }
+                }
+            }
+        },
+        "paywall_cta_monthly": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Subscribe Monthly"
+                    }
+                }
+            }
+        },
+        "paywall_cta_yearly": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start Free Trial"
+                    }
+                }
+            }
+        },
+        "paywall_cta_lifetime": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Buy Lifetime Access"
+                    }
+                }
+            }
+        },
+        "paywall_cta_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Double tap to purchase the selected plan"
+                    }
+                }
+            }
+        },
+        "paywall_restore": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Restore Purchases"
+                    }
+                }
+            }
+        },
+        "paywall_terms": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Terms of Service"
+                    }
+                }
+            }
+        },
+        "paywall_privacy": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Privacy Policy"
+                    }
+                }
+            }
+        },
+        "paywall_error_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Purchase Error"
+                    }
+                }
+            }
+        },
+        "paywall_error_dismiss": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "OK"
+                    }
+                }
+            }
+        },
+        "paywall_plan_selected_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Currently selected plan"
+                    }
+                }
+            }
+        },
+        "paywall_plan_tap_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Double tap to select this plan"
+                    }
+                }
+            }
+        },
+        "paywall_features_header": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Features"
+                    }
+                }
+            }
+        },
+        "paywall_free_column": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Free"
+                    }
+                }
+            }
+        },
+        "paywall_premium_column": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Premium"
+                    }
+                }
+            }
+        },
+        "paywall_feature_basic_tracking": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Basic Goal Tracking"
+                    }
+                }
+            }
+        },
+        "paywall_feature_daily_streaks": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Daily Streaks"
+                    }
+                }
+            }
+        },
+        "paywall_feature_unlimited_freezes": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Unlimited Streak Freezes"
+                    }
+                }
+            }
+        },
+        "paywall_feature_streak_repair": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak Repair"
+                    }
+                }
+            }
+        },
+        "paywall_feature_advanced_analytics": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Advanced Analytics"
+                    }
+                }
+            }
+        },
+        "paywall_feature_priority_support": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Priority Support"
+                    }
+                }
+            }
+        },
+        "paywall_feature_included": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Included"
+                    }
+                }
+            }
+        },
+        "paywall_feature_not_included": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Not included"
+                    }
+                }
+            }
+        },
+        "paywall_rating_accessibility": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Rated 4.8 out of 5 stars"
+                    }
+                }
+            }
+        },
+        "paywall_testimonial_quote": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "\"This app completely changed my daily routine. The streak system keeps me motivated every single day.\""
+                    }
+                }
+            }
+        },
+        "paywall_testimonial_author": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "-- Sarah K., Premium Member"
+                    }
+                }
+            }
+        },
+        "streak_freeze_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak Freeze"
+                    }
+                }
+            }
+        },
+        "streak_freeze_available %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld freezes available"
+                    }
+                }
+            }
+        },
+        "streak_use_freeze": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Use Streak Freeze"
+                    }
+                }
+            }
+        },
+        "streak_get_more_freezes": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get Unlimited Freezes"
+                    }
+                }
+            }
+        },
+        "streak_repair_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Repair Your Streak"
+                    }
+                }
+            }
+        },
+        "streak_repair_description %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your previous %lld-day streak can be restored."
+                    }
+                }
+            }
+        },
+        "streak_repair_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Repair Streak"
+                    }
+                }
+            }
+        },
+        "streak_repair_upgrade": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Upgrade to Repair Streak"
+                    }
+                }
+            }
+        },
+        "milestone_share_title %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld Day Streak!"
+                    }
+                }
+            }
+        },
+        "milestone_share_button": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Share Milestone"
+                    }
+                }
+            }
+        },
+        "milestone_days_streak": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Day Streak"
+                    }
+                }
+            }
+        },
+        "notification_streak_risk_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your streak is at risk!"
+                    }
+                }
+            }
+        },
+        "notification_streak_risk_body %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Don't lose your %lld-day streak! Complete your goal today."
+                    }
+                }
+            }
+        },
+        "notification_milestone_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Congratulations!"
+                    }
+                }
+            }
+        },
+        "notification_milestone_body %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Amazing! You've reached a %lld-day streak. Keep going!"
+                    }
+                }
+            }
+        },
+        "accessibility_freeze_use_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Use a streak freeze to protect your streak today"
+                    }
+                }
+            }
+        },
+        "accessibility_freeze_buy_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Upgrade to premium for unlimited streak freezes"
+                    }
+                }
+            }
+        },
+        "accessibility_freeze_active": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak freeze is active"
+                    }
+                }
+            }
+        },
+        "accessibility_freeze_available %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld streak freezes available"
+                    }
+                }
+            }
+        },
+        "accessibility_repair_hint %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Repair your streak to restore your previous %lld-day streak"
+                    }
+                }
+            }
+        },
+        "accessibility_repair_upgrade_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Upgrade to premium to repair your streak"
+                    }
+                }
+            }
+        },
+        "accessibility_milestone_share %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Share your %lld-day streak milestone"
+                    }
+                }
+            }
+        },
+        "accessibility_milestone_count %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld days"
+                    }
+                }
+            }
+        },
+        "intent_complete_goal_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete My Goal"
+                    }
+                }
+            }
+        },
+        "intent_complete_goal_description": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Mark today's goal as complete and update your streak."
+                    }
+                }
+            }
+        },
+        "intent_complete_goal_response %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Goal complete! Your streak is now %lld days."
+                    }
+                }
+            }
+        },
+        "intent_check_streak_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Check My Streak"
+                    }
+                }
+            }
+        },
+        "intent_check_streak_description": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Check your current streak status."
+                    }
+                }
+            }
+        },
+        "intent_streak_at_risk %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your streak is %lld days but at risk! Complete your goal today."
+                    }
+                }
+            }
+        },
+        "intent_streak_status %lld %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your streak is %lld days. Your best is %lld days."
+                    }
+                }
+            }
+        },
+        "intent_no_streak": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "You don't have an active streak. Complete a goal to start one!"
+                    }
+                }
+            }
+        },
+        "shortcut_complete_goal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete Goal"
+                    }
+                }
+            }
+        },
+        "shortcut_check_streak": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Check Streak"
+                    }
+                }
+            }
+        },
+        "live_activity_streak_accessibility %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak: %lld days"
+                    }
+                }
+            }
+        },
+        "live_activity_progress_accessibility": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Session progress"
+                    }
+                }
+            }
+        },
+        "live_activity_flame_icon": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Active session"
+                    }
+                }
+            }
+        },
+        "live_activity_elapsed_accessibility %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld minutes elapsed"
+                    }
+                }
+            }
+        },
+        "live_activity_session_goal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Session in progress"
+                    }
+                }
+            }
+        },
+        "live_activity_day_streak %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld day streak"
+                    }
+                }
+            }
+        },
+        "live_activity_minutes_format %lld %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld / %lld min"
+                    }
+                }
+            }
+        },
+        "accessibility_mascot_image": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "App mascot"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_progress": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Onboarding progress"
+                    }
+                }
+            }
+        },
+        "accessibility_freeze_available": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Streak freezes available"
+                    }
+                }
+            }
+        },
+        "accessibility_milestone_count": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Milestone streak count"
+                    }
+                }
+            }
+        },
+        "accessibility_milestone_share": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Share milestone"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_get_started": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Get started"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_next": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Next"
+                    }
+                }
+            }
+        },
+        "accessibility_onboarding_skip": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Skip"
+                    }
+                }
+            }
+        },
+        "accessibility_close_search": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Close search"
+                    }
+                }
+            }
+        },
+        "accessibility_complete_goal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Complete goal"
+                    }
+                }
+            }
+        },
+        "accessibility_end_focus_session": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "End focus session"
+                    }
+                }
+            }
+        },
+        "accessibility_goal_completed_today": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Goal completed today"
+                    }
+                }
+            }
+        },
+        "accessibility_manage_subscription": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Manage subscription"
+                    }
+                }
+            }
+        },
+        "accessibility_open_search": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Open search"
+                    }
+                }
+            }
+        },
+        "accessibility_refresh_library": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Refresh library"
+                    }
+                }
+            }
+        },
+        "accessibility_repair_hint": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Repair your streak"
+                    }
+                }
+            }
+        },
+        "accessibility_restore_purchases": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Restore purchases"
+                    }
+                }
+            }
+        },
+        "accessibility_search_field": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Search library"
+                    }
+                }
+            }
+        },
+        "accessibility_show_paywall_demo": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Show paywall demo"
+                    }
+                }
+            }
+        },
+        "accessibility_sign_out": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Sign out"
+                    }
+                }
+            }
+        },
+        "accessibility_start_focus_session": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start focus session"
+                    }
+                }
+            }
+        },
+        "accessibility_theme_picker": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Theme picker"
+                    }
+                }
+            }
+        },
+        "accessibility_try_again": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Try again"
+                    }
+                }
+            }
+        },
+        "home_end_focus_session": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "End Focus Session"
+                    }
+                }
+            }
+        },
+        "home_focus_session_goal": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Daily Goal"
+                    }
+                }
+            }
+        },
+        "home_start_focus_session": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Start Focus Session"
+                    }
+                }
+            }
+        },
+        "milestone_share_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "I reached a %lld-day streak!"
+                    }
+                }
+            }
+        },
+        "notification_milestone_body": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Amazing! You've reached a %lld-day streak. Keep it going!"
+                    }
+                }
+            }
+        },
+        "notification_streak_risk_body": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your %lld-day streak is at risk! Complete your goal today."
+                    }
+                }
+            }
+        },
+        "paywall_monthly_equivalent": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "$%@/mo"
+                    }
+                }
+            }
+        },
+        "streak_freeze_available": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld freezes available"
+                    }
+                }
+            }
+        },
+        "streak_repair_description": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Your previous %lld-day streak can be repaired"
+                    }
+                }
+            }
+        },
+        "library_select_article": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Select an Article"
+                    }
+                }
+            }
+        },
+        "library_select_article_prompt": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Choose an article from the list to read it."
+                    }
+                }
+            }
+        },
+        "error_alert_title": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "Something went wrong"
+                    }
+                }
+            }
+        },
+        "error_alert_default_message": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "An unexpected error occurred."
+                    }
+                }
+            }
+        },
+        "streak_text_one_day": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "1 day"
+                    }
+                }
+            }
+        },
+        "streak_text_days %lld": {
+            "localizations": {
+                "en": {
+                    "stringUnit": {
+                        "state": "translated",
+                        "value": "%lld days"
+                    }
+                }
+            }
+        }
+    },
+    "version": "1.0"
+}
